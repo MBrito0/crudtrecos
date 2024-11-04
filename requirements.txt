@@ -6,5 +6,5 @@ Flask-MySQLdb==2.0.0
 itsdangerous==2.2.0
 Jinja2==3.1.4
 MarkupSafe==3.0.2
-mysqlclient==2.2.5
+mysqlclient==2.2.4
 Werkzeug==3.0.6

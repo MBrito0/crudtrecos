@@ -1,2 +1,184 @@
-/* importa a bilbioteca de ícones Font Awesome */
+/* Importa a bilbioteca de ícones Font Awesome da CDNJS */
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css');
+
+/* Definições e paleta de cores do tema */
+:root {
+    /* Fonte padrão */
+    --font-family: Consolas, "Courier New", "Lucida Console", Monaco, monospace;
+    --font-size: 16px;
+
+    /* Cor de fundo do site */
+    --background-color: rgb(23, 64, 92);
+
+    /* Cor 1 do tema */
+    --primary-color: steelblue;
+
+    /* Cor 2 do tema */
+    --secondary-color: orange;
+
+    /* Cor 3 do tema */
+    --tertiary-color: orangered;
+
+    /* Cor de fundo das caixas*/
+    --box-background-color: white;
+
+    /* Definição do logotipo */
+    --logo-border: .8px black;
+}
+
+* {
+    box-sizing: border-box;
+    outline: none;
+}
+
+html,
+body,
+#wrap {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: var(--font-family);
+    font-size: var(--font-size);
+}
+
+body {
+    background-color: var(--background-color);
+}
+
+/* Estilos de links */
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--tertiary-color);
+}
+
+/* Estilos para inputs, textarea e button */
+input,
+textarea,
+button {
+    font-family: inherit;
+    font-size: inherit;
+}
+
+/* Contêiner principal */
+#wrap {
+    min-width: 280px;
+    max-width: 768px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Elementos filhos de #wrap */
+#wrap>header,
+#wrap>nav,
+#wrap>main,
+#wrap>footer {
+    background-color: var(--box-background-color);
+    padding: .5rem;
+    margin: .25rem .5rem .5rem .5rem;
+    border-radius: .5rem;
+}
+
+#wrap>header {
+    margin-top: .5rem;
+}
+
+#wrap>header a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#wrap>header i {
+    display: block;
+    margin-right: .5rem;
+    font-size: 3rem;
+    color: var(--secondary-color);
+    -webkit-text-stroke: var(--logo-border);
+    text-shadow: 2px 2px 5px grey;
+}
+
+#wrap>header h1 {
+    color: var(--primary-color);
+    margin: 0;
+    text-shadow: 2px 2px 5px grey;
+}
+
+#wrap>nav {
+    display: flex;
+    align-items: center;
+}
+
+#wrap>nav>a {
+    color: var(--primary-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: .25rem .5rem;
+    margin-right: .5rem;
+    text-transform: uppercase;
+}
+
+#wrap>nav>a:hover {
+    color: var(--box-background-color);
+    background-color: var(--primary-color);
+    border-radius: .25rem;
+}
+
+#wrap>nav>span {
+    display: flex;
+    margin-left: auto;
+    font-size: 90%;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+#wrap>nav>a i {
+    font-size: 1.5rem;
+    margin-bottom: .25rem;
+}
+
+/* Larguras maiores que 425px (inclusive) */
+@media screen and (min-width: 425px) {
+    #wrap>nav>a {
+        flex-direction: row;
+    }
+
+    #wrap>nav>a i {
+        font-size: 1rem;
+        margin: 0 .25rem 0 0;
+    }
+}
+
+#wrap>main {
+    flex-grow: 1;
+}
+
+#wrap>main>h2:first-child {
+    margin-top: 0;
+}
+
+#wrap>footer {
+    font-size: small;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#wrap>footer a {
+    display: flex;
+    margin-right: .25rem;
+}
+
+#wrap>footer img {
+    width: 1rem;
+    height: 1rem;
+    margin-right: .1rem;
+}

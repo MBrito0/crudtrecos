@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/static/css/_template.css">
+    <link rel="shortcut icon" href="/static/img/favicon.png">
     <title>{{ titulo }}</title>
 </head>
 
@@ -12,33 +13,38 @@
 
     <div id="wrap">
 
-        {# Cabeçalho do template #}
         <header>
             <a href="/">
                 <i class="fa-solid fa-cubes fa-fw"></i>
-                <h1>{{ titulo }}</h1>
+                <h1>CRUDTrecos</h1>
             </a>
         </header>
 
         <nav>
-            <a href="/">Lista</a>
-            <a href="/novo">Novo</a>
+            <a href="/" title="Listar meus trecos"><i
+                    class="fa-regular fa-rectangle-list fa-fw"></i><span>Listar</span></a>
+            <a href="/novo" title="Cadastrar novo treco"><i class="fa-solid fa-plus fa-fw"></i><span>Novo</span></a>
             <span>
-                Olá Joca!
-                <button><i class="fa-solid fa-xmark fa-fw"></i></button>
+                Olá {{ usuario.pnome }}!
+                <a href="/sair" title="Sair / Logout do aplicativo"><i class="fa-solid fa-circle-xmark fa-fw"></i></a>
             </span>
         </nav>
 
         <main>
 
-<h2>Título de teste</h2>
-<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatem labore officia tenetur vero, laudantium fugit vel ex, doloremque omnis nesciunt tempore asperiores provident nulla laborum eius esse. Delectus, quidem voluptates!</p>
+            <h2>Teste</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Error quam incidunt nemo vitae aliquam iste
+                autem quasi quos dolorem rem velit nisi neque nostrum magnam enim asperiores corrupti, ipsum molestias.
+            </p>
 
         </main>
 
         <footer>
-            <i class="fa-regular fa-copyright fa-rotate-180 fa-fw"></i>
-            Copyleft 2024 Joca da Silva
+            <a href="https://creativecommons.org/licenses/by-sa/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer">
+                <img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" alt="Creative Commons License">
+                <img src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" alt="Creative Commons Attribution">
+                <img src="https://mirrors.creativecommons.org/presskit/icons/sa.svg?ref=chooser-v1" alt="Creative Commons Share Adapt">
+            </a> By Joca da Silva
         </footer>
 
     </div>
