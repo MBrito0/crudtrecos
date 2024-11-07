@@ -132,12 +132,27 @@ button {
     border-radius: .25rem;
 }
 
+#wrap>nav>a:last-child {
+    margin-left: auto;
+    text-transform: none;
+    padding: .25rem;
+    margin-right: 0;
+}
+
+#wrap>nav>a:last-child span {
+    font-size: small;
+}
+
 #wrap>nav>span {
     display: flex;
     margin-left: auto;
     font-size: 90%;
     align-items: center;
     justify-content: flex-end;
+}
+
+#wrap>nav>span i {
+    margin-right: .25rem;
 }
 
 #wrap>nav>a i {
@@ -159,6 +174,7 @@ button {
 
 #wrap>main {
     flex-grow: 1;
+    padding: 1rem;
 }
 
 #wrap>main>h2:first-child {
@@ -181,4 +197,138 @@ button {
     width: 1rem;
     height: 1rem;
     margin-right: .1rem;
+}
+
+/***************/
+/* Formulários */
+/***************/
+
+.field-help {
+    color: orange;
+    font-size: small;
+    cursor: pointer;
+}
+
+#wrap>main form {
+    display: block;
+    width: 100%;
+    margin: auto;
+}
+
+#wrap>main form label {
+    display: block;
+    padding: 0 0 .25rem .5rem;
+}
+
+#wrap>main form input,
+#wrap>main form textarea,
+#wrap>main form button {
+    padding: .25rem .5rem;
+    border-radius: .35rem;
+}
+
+#wrap>main form input,
+#wrap>main form textarea {
+    width: 100%;
+    border: 1px solid red;
+}
+
+#wrap>main form textarea {
+    resize: vertical;
+}
+
+#wrap>main form button[type=submit] {
+    border: none;
+    background-color: grey;
+    color: white;
+    cursor: pointer;
+    pointer-events: none;
+}
+
+#wrap>main form input:valid,
+#wrap>main form textarea:valid {
+    border: 1px solid blue;
+}
+
+#wrap>main form:valid button[type=submit] {
+    background-color: steelblue;
+    pointer-events: all;
+}
+
+.input-password {
+    display: flex;
+    align-items: center;
+}
+
+.input-password span {
+    display: inline-block;
+    margin-left: .25rem;
+    color: grey;
+}
+
+
+.input-password input {
+    width: 200px !important;
+}
+
+#formNovo,
+#formCadastro,
+#formNovasenha {
+    max-width: 500px;
+}
+
+#formLogin {
+    max-width: 300px;
+}
+
+.item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+    background-color: rgb(255, 245, 226);
+}
+
+.item img {
+    display: block;
+    width: 5rem;
+    height: 5rem;
+    margin-right: .5rem;
+}
+
+.item div {
+    padding: .5rem;
+    flex-grow: 1;
+}
+
+.item h4 {
+    margin: 0 0 .5rem 0;
+}
+
+.item small {
+    display: block;
+    padding-top: .5rem;
+}
+
+#myDialog {
+    border: none;
+    border-radius: .3rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 1rem;
+    width: 90%;
+    max-width: 300px;
+    margin: auto;
+    background-color: rgb(220, 255, 220);
+    font-size: 90%;
+}
+
+#myDialog h4 {
+    margin-top: 0;
+}
+
+#myDialog::backdrop {
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.apaga {
+    float: right;
 }

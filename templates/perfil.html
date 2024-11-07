@@ -1,0 +1,24 @@
+{# Inclui o template principal nesta página #}
+{% extends '_template.html' %}
+
+{# Bloco com conteúdo desta página #}
+{% block conteudo %}
+
+<h2>Perfil de {{ usuario.pnome }}</h2>
+<p>Esses são os seus dados de usuário, cadastrados no site.</p>
+
+<ul>
+    <li>u_data</li>
+    <li>u_nome</li>
+    <li>u_nascimento</li>
+    <li>u_email</li>
+    <li>Quantidade de trecos</li>
+</ul>
+
+<p>Clique no botão abaixo para sair do aplicativo neste dispositivo:</p>
+<p><button type="button">Encerrar sessão</button></p>
+
+<p>Clique no botão abaixo para encerrar sua conta no aplicativo. Lembre-se que sua coleção também será apagada!</p>
+<p><button type="button">Encerrar conta</button></p>
+
+{% endblock %}

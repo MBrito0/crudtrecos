@@ -1,0 +1,40 @@
+{# Inclui o template principal nesta página #}
+{% extends '_template.html' %}
+
+{# Bloco com conteúdo desta página #}
+{% block conteudo %}
+
+<h2>Pedido de Senha</h2>
+<p>Sua senha atual não pode ser recuperada, porém, preencha os campos abaixo com os dados corretos para gerar uma nova senha de acesso.</p>
+
+<form action="/novasenha" method="post" id="formNovasenha">
+
+    <p>
+        <label for="email">
+            Seu e-mail:
+            <span class="field-help" title="O endereço de e-mail com o qual você acessa o site."><i class="fa-solid fa-circle-question"></i></span>
+        </label>
+        <input type="email" name="email" id="email" required>
+    </p>
+
+    <p>
+        <label for="nascimento">
+            Sua data de nascimento:
+            <span class="field-help" title="Sua data de nascimento no formato 'dd/mm/aaaa'."><i class="fa-solid fa-circle-question"></i></span>
+        </label>
+        <input type="date" name="nascimento" id="nascimento" required>
+    </p>
+
+    <p>
+        <button type="submit">Enviar</button>
+    </p>
+
+</form>
+
+<hr>
+<ul>
+    <li>Lembrou da senha? <a href="/login">Faça login!</a></li>
+    <li>Não é cadastrado? <a href="/cadastro">Clique aqui!</a></li>
+</ul>
+
+{% endblock %}

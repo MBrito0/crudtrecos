@@ -1,0 +1,46 @@
+<style>
+.item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+    background-color: rgb(255, 245, 226);
+}
+
+.item img {
+    display: block;
+    width: 5rem;
+    height: 5rem;
+    margin-right: .5rem;
+}
+
+.item div {
+    padding: .5rem;
+}
+
+.item h4 {
+    margin: 0 0 .5rem 0;
+}
+
+.item small {
+    display: block;
+    padding-top: .5rem;
+}
+</style>
+
+
+<div class="lista">
+
+    {% for treco in trecos %}
+
+    <div class="item">
+        <a href="{{ treco.t_foto }}" target="_blank"><img src="{{ treco.t_foto }}" alt="{{ treco.t_nome }}"></a>
+        <div>
+            <h4>{{ treco.t_nome }}</h4>
+            {{ treco.t_descricao }}
+            <small>Local: {{ treco.t_localizacao }}</small>
+        </div>
+    </div>
+
+    {% endfor %}
+
+</div>

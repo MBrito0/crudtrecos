@@ -1,0 +1,76 @@
+{# Inclui o template principal nesta página #}
+{% extends '_template.html' %}
+
+{# Bloco com conteúdo desta página #}
+{% block conteudo %}
+
+<h2>Cadastre-se</h2>
+<p>Você precisa se cadastrar para gerenciar sua coleção.</p>
+<p>Preencha todos os campos para se cadastrar.</p>
+
+<form action="/cadastro" method="post" id="formCadastro">
+
+    <p>
+        <label for="nome">
+            Nome:
+            <span class="field-help" title="Seu nome completo ou nome social."><i class="fa-solid fa-circle-question"></i></span>
+        </label>
+        <input type="text" name="nome" id="nome" required minlength="3">
+    </p>
+
+    <p>
+        <label for="nascimento">
+            Nascimento:
+            <span class="field-help" title="Sua data de nascimento será usada para recuperação de senha, sorteios e promoções."><i class="fa-solid fa-circle-question"></i></span>
+        </label>
+        <input type="date" name="nascimento" id="nascimento" required>
+    </p>
+
+    <p>
+        <label for="email">
+            E-mail:
+            <span class="field-help" title="Seu melhor endereço de e-mail."><i class="fa-solid fa-circle-question"></i></span>
+        </label>
+        <input type="email" name="email" id="email" required>
+    </p>
+
+    <p>
+        <label for="senha">
+            Senha:
+            <span class="field-help" title="A senha deve ter pelo menos 8 caracteres incluindo: maiúculas, minúsculas, números e caracteres especiais."><i class="fa-solid fa-circle-question"></i></span>
+        </label>
+        <span class="input-password">
+            <input type="password" id="senha" name="senha" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="A senha deve ter pelo menos 8 caracteres incluindo: maiúculas, minúsculas, números e caracteres especiais." required>
+            <span id="toggleSenha"><i id="toggleIcone" class="fa-solid fa-eye fa-fw"></i></span>
+        </span>
+    </p>
+
+    <p>
+        <button type="submit">Cadastrar</button>
+    </p>
+
+</form>
+
+<hr>
+<ul>
+    <li>Já tem cadastro? <a href="/login">Faça login!</a></li>
+    <li>Esqueceu a senha? <a href="/novasenha">Clique aqui!</a></li>
+</ul>
+
+
+<script>
+    toggleSenha.addEventListener('click', (e) => {
+        if (senha.type == 'password') {
+            senha.type = 'text'
+            toggleIcone.classList.remove('fa-eye')
+            toggleIcone.classList.add('fa-eye-slash')
+        } else {
+            senha.type = 'password'
+            toggleIcone.classList.remove('fa-eye-slask')
+            toggleIcone.classList.add('fa-eye')
+        }
+    })
+</script>
+
+
+{% endblock %}

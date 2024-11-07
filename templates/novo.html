@@ -1,0 +1,64 @@
+{# Inclui o template principal nesta página #}
+{% extends '_template.html' %}
+
+{# Bloco com conteúdo desta página #}
+{% block conteudo %}
+
+<h2>Novo Treco</h2>
+
+<p>Preencha todos os campos para cadastrar um novo treco.</p>
+
+<form action="/novo" method="post" id="formNovo">
+
+    <p>
+        <label for="foto">
+            URL da Foto: 
+            <span class="field-help" title="URL da foto local ou na Internet que deve iniciar com 'http://' ou 'https://'."><i class="fa-solid fa-circle-question"></i></span>
+        </label>
+        <input type="url" name="foto" id="foto" required placeholder="https://">
+    </p>
+
+    <p>
+        <label for="nome">
+            Nome:
+            <span class="field-help" title="Nome que identifica o treco."><i class="fa-solid fa-circle-question"></i></span>
+        </label>
+        <input type="text" name="nome" id="nome" required minlength="3">
+    </p>
+
+    <p>
+        <label for="descricao">
+            Descrição:
+            <span class="field-help" title="Descrição completa e detalhada do treco."><i class="fa-solid fa-circle-question"></i></span>
+        </label>
+        <textarea name="descricao" id="descricao" required minlength="5"></textarea>
+    </p>
+
+    <p>
+        <label for="localizacao">
+            Localização:
+            <span class="field-help" title="Onde o treco está armazenado."><i class="fa-solid fa-circle-question"></i></span>
+        </label>
+        <input type="text" name="localizacao" id="localizacao" required minlength="2">
+    </p>
+
+    <p>
+        <button type="submit">Cadastrar</button>
+    </p>
+
+</form>
+
+{% if sucesso %}
+
+<dialog id="myDialog">
+    <h4>Legal!</h4>
+    <p>Seu novo treco foi cadastrado!</p>
+    <form method="dialog">
+        <button>OK</button>
+    </form>
+</dialog>
+<script>myDialog.showModal()</script>
+
+{% endif %}
+
+{% endblock %}

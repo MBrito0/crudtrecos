@@ -6,6 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/static/css/_template.css">
     <link rel="shortcut icon" href="/static/img/favicon.png">
+    {# Se definiu uma folha de estilos, gera o link para ela. #}
+    {% if css %}
+    <link rel="stylesheet" href="/static/css/{{ css }}">
+    {% endif %}
+    {# Interpola a variável 'titulo' no <title></title> do site #}
     <title>{{ titulo }}</title>
 </head>
 
@@ -20,17 +25,16 @@
             </a>
         </header>
 
+        {% if usuario %}
         <nav>
-            <a href="/" title="Listar meus trecos"><i
-                    class="fa-regular fa-rectangle-list fa-fw"></i><span>Listar</span></a>
+            <a href="/" title="Listar meus trecos"><i class="fa-regular fa-rectangle-list fa-fw"></i><span>Listar</span></a>
             <a href="/novo" title="Cadastrar novo treco"><i class="fa-solid fa-plus fa-fw"></i><span>Novo</span></a>
-            <span>
-                Olá {{ usuario.pnome }}!
-                <a href="/sair" title="Sair / Logout do aplicativo"><i class="fa-solid fa-circle-xmark fa-fw"></i></a>
-            </span>
+            <a href="/perfil" id="navUsuario"><i class="fa-solid fa-user"></i><span>Olá {{ usuario.pnome }}!</span></a>
         </nav>
+        {% endif %}
 
         <main>
+            {# O conteúdo de todas as páginas do site abrem no bloco 'content' abaixo #}
             {% block conteudo %}{% endblock %}
         </main>
 
