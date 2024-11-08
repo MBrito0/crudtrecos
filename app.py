@@ -271,6 +271,23 @@ def apaga(id):
     return redirect(url_for('index', a='apagado'))
 
 
+@app.route('/logout')
+def logout():
+
+    # Página de destino de logout
+    resposta = make_response(redirect(url_for('login')))
+
+    # apaga o cookie do usuário
+    resposta.set_cookie(
+        key='usuario',  # Nome do cookie
+        value='',  # Apara o valor do cookie
+        max_age=0  # A validade do cookie é ZERO
+    )
+
+    # Redireciona para login
+    return resposta
+
+
 # Executa o servidor HTTP se estiver no modo de desenvolvimento
 # Remova / comente essas linhas no modo de produção
 if __name__ == '__main__':
